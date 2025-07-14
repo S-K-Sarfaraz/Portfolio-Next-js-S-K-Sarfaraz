@@ -11,6 +11,7 @@ import WaveButton  from './../components/WaveButton';
 import GlassIcons from './../components/GlassIcons'
 import GradientText from './../components/GradientText'
 import CountUp from './../components/CountUp'
+import ScrollVelocity from './../components/ScrollVelocity';
 
 import { Allura } from 'next/font/google';
 
@@ -207,9 +208,7 @@ const items = [
                 scrambleChars=".:" 
               >
                 <span>
-                  I create innovative digital solutions using modern technologies. 
-                  Passionate about building scalable web applications and mobile experiences 
-                  that make a difference.
+                  I create innovative digital solutions using modern technologies. Passionate about building scalable web applications and mobile experiences that make a difference.
                 </span>
               </ScrambledText>
             </motion.div>
@@ -257,6 +256,12 @@ const items = [
           <ChevronDown size={32} />
         </motion.button>
       </section>
+      
+      <ScrollVelocity
+        texts={['NEXT JS Expert', 'Full Stack Develper']} 
+        velocity={50} 
+        className="custom-scroll-text"
+      />
 
       {/* Quick About Section */}
       <section id="about-section" className="py-20 bg-muted/50">
@@ -279,20 +284,10 @@ const items = [
                 Building the Future, One Line at a Time
                 </GradientText>
               </h2>
-              <p className="text-lg text-muted-foreground -my-12 md:-my-6 !sm:my-2 max-w-3xl mx-auto leading-relaxed">
-                <ScrambledText
-                className="text-lg sm:text-xl font-bold !text-[#a3a3a3] text-muted-foreground max-w-3xl mx-auto leading-relaxed"
-                radius={50}
-                duration={1.2}
-                speed={0.5}
-                scrambleChars=".:" 
-              >
-                <span>
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                 With over 5 years of experience in full-stack development, I specialize in creating 
                 robust, scalable applications using cutting-edge technologies. My passion lies in 
                 solving complex problems and delivering exceptional user experiences.  
-                </span>
-              </ScrambledText>
               </p>
             </div>
 
