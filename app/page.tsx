@@ -257,11 +257,11 @@ const items = [
         </motion.button>
       </section>
       
-      <ScrollVelocity
+      {/* <ScrollVelocity
         texts={['NEXT JS Expert', 'Full Stack Develper']} 
         velocity={50} 
         className="custom-scroll-text"
-      />
+      /> */}
 
       {/* Quick About Section */}
       <section id="about-section" className="py-20 bg-muted/50">
@@ -285,7 +285,7 @@ const items = [
                 </GradientText>
               </h2>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                With over 5 years of experience in full-stack development, I specialize in creating 
+                With over 1.5 years of experience in full-stack development, I specialize in creating 
                 robust, scalable applications using cutting-edge technologies. My passion lies in 
                 solving complex problems and delivering exceptional user experiences.  
               </p>

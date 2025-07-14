@@ -1,10 +1,11 @@
 'use client'
 import React from 'react'
 import { motion } from 'framer-motion';
-import { Code, Smartphone, Server, Palette, Download, Calendar, MapPin, GraduationCap } from 'lucide-react';
+import { Code, Smartphone, Server, Palette, Download, Calendar, MapPin, GraduationCap, Lock, Database, Zap, Repeat, Table } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
+
 
 const skills = [
   {
@@ -14,7 +15,7 @@ const skills = [
     color: 'from-blue-500 to-cyan-500'
   },
   {
-    name: 'React Native',
+    name: 'React Native & Expo',
     level: 90,
     icon: Smartphone,
     color: 'from-green-500 to-teal-500'
@@ -26,51 +27,101 @@ const skills = [
     color: 'from-yellow-500 to-orange-500'
   },
   {
-    name: 'UI/UX Design',
+    name: 'Clerk (Auth)',
+    level: 85,
+    icon: Lock,
+    color: 'from-red-500 to-pink-500'
+  },
+  {
+    name: 'Drizzle & PostgreSQL (Neon)',
+    level: 82,
+    icon: Database,
+    color: 'from-emerald-500 to-lime-500'
+  },
+  {
+    name: 'AJAX & jQuery',
+    level: 80,
+    icon: Zap,
+    color: 'from-sky-500 to-indigo-500'
+  },
+  {
+    name: 'Inngest (Background Jobs)',
+    level: 78,
+    icon: Repeat,
+    color: 'from-fuchsia-500 to-rose-500'
+  },
+  {
+    name: 'UI/UX Design & Tailwind CSS',
     level: 85,
     icon: Palette,
     color: 'from-purple-500 to-pink-500'
+  },
+  {
+    name: 'SQL & MySQL',
+    level: 82,
+    icon: Table,
+    color: 'from-gray-500 to-stone-500'
   }
 ];
+
 
 const experiences = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'TechCorp Solutions',
-    period: '2022 - Present',
-    location: 'San Francisco, CA',
-    description: 'Leading development of enterprise-scale web applications using React, Next.js, and Django. Mentoring junior developers and architecting scalable solutions.'
+    title: 'Project: AI Career Coach',
+    company: 'TGAYS Technology Private Limited',
+    period: 'June 10, 2025 – Present',
+    location: 'Internal Project',
+    description:
+      'A full-stack Next.js application with features including AI Career Chat Assistant, AI Resume Analyzer, and AI Roadmap Generator. Integrated Clerk for auth, Drizzle ORM, Inngest for background workflows, and Neon PostgreSQL for the database. Designed to provide tailored career insights and resume improvements using AI.',
   },
   {
-    title: 'Full Stack Developer',
-    company: 'StartupXYZ',
-    period: '2020 - 2022',
-    location: 'Remote',
-    description: 'Built mobile-first web applications and React Native mobile apps. Implemented CI/CD pipelines and improved application performance by 40%.'
+    title: 'Full Stack Developer (Internship)',
+    company: 'TGAYS Technology Private Limited',
+    period: '2024',
+    location: 'Internal Project',
+    description:
+      'Built and deployed cross-platform apps using React Native CLI and Expo with EAS builds. Developed UI/UX screens for alarm apps using React Native Paper. Implemented secure authentication via Clerk and Firebase. Designed scalable backend APIs with Django. Worked on dynamic web interfaces with Django and real-time updates. Developed the Gym Management System and AI Career Coach web apps.',
   },
   {
-    title: 'Frontend Developer',
-    company: 'WebAgency Pro',
-    period: '2019 - 2020',
-    location: 'New York, NY',
-    description: 'Developed responsive websites and web applications for clients. Specialized in React development and modern CSS frameworks.'
+    title: 'Project: Gym Management System',
+    company: 'TGAYS Technology Private Limited',
+    period: '2024',
+    location: 'Internal Project',
+    description:
+      'A role-based gym management system built using Django and MySQL. Features include Super Admin/Gym Owner/Member access, attendance tracking, payment gateway integration, and AJAX-powered dynamic frontend with no full page reloads.',
+  },
+  {
+    title: 'Project: Expense Tracker + Finance Blog',
+    company: 'Personal Project',
+    period: '2025',
+    location: 'Personal',
+    description:
+      'Developed a Next.js-based monthly expense tracker with an integrated blog system. Admins can manage finance-related blog posts, while users track expenses. Included role-based access, Clerk for authentication, and Drizzle with Neon as the database layer.',
   }
 ];
 
+
 const education = [
   {
-    degree: 'Master of Science in Computer Science',
-    school: 'Stanford University',
-    period: '2017 - 2019',
-    description: 'Specialized in Software Engineering and Human-Computer Interaction. Graduated Magna Cum Laude.'
+    degree: 'Bachelor of Technology in Computer Science & Information Technology',
+    school: 'Dronacharya Group of Institutions, Greater Noida (AKTU University)',
+    period: '— Completed',
+    description: 'Graduated with 67.1%. Gained strong fundamentals in software development, databases, and web technologies.'
   },
   {
-    degree: 'Bachelor of Science in Computer Science',
-    school: 'University of California, Berkeley',
-    period: '2013 - 2017',
-    description: 'Foundation in computer science principles, algorithms, and software development. Dean\'s List recipient.'
+    degree: '12th Standard (Senior Secondary)',
+    school: '27101 SBV (JAI PRAKASH NARAYAN), E. Vinod Nagar, Delhi | CBSE Board',
+    period: '2021',
+    description: 'Completed with 77.6%. Focused on Science stream with emphasis on mathematics and computer science.'
+  },
+  {
+    degree: '10th Standard (Secondary)',
+    school: '160020-G Sarvodaya Boys SSS, Pkt-B Ph-II, Mayur Vihar, Delhi | CBSE Board',
+    period: '2019',
+    description: 'Completed with 86%. Built a strong foundation in core subjects, including mathematics and science.'
   }
 ];
+
 
 const AboutClient = () => {
   return (
@@ -110,25 +161,23 @@ const AboutClient = () => {
                 <h2 className="text-3xl font-bold text-foreground">My Journey</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
                   <p>
-                    Hello! I&apos;m Alex Johnson, a passionate full-stack developer with over 5 years of experience 
-                    creating innovative digital solutions. My journey began with a curiosity about how things work 
-                    on the web, which evolved into a deep love for crafting elegant, efficient code.
+                    Hello! I&apos;m SK Sarfaraz, a dedicated full-stack developer with over 1.5 years of hands-on experience building modern, scalable web applications. My journey in tech has been fueled by a deep passion for solving complex problems and turning ideas into reality through clean, efficient code. I have professional experience at TGAYS Technology Pvt. Ltd., where I worked on cross-platform mobile apps, intuitive UI/design, and secure authentication systems.
                   </p>
                   <p>
-                    I specialize in modern JavaScript frameworks, particularly React and Next.js for web development, 
-                    and React Native for mobile applications. On the backend, I&apos;m proficient in Django and Python, 
-                    creating robust APIs and scalable server architectures.
+                    I work primarily with Next.js for full-stack development, combining powerful tools like Clerk for authentication, Neon for scalable Postgres databases, Drizzle for type-safe ORM, and Inngest for background jobs and workflows. I’ve also worked extensively with Django and Python to build dynamic web applications, and with Firebase for real-time features and Google sign-ins. My focus is on building modern, robust, and maintainable applications that solve real-world problems — including a customizable alarm app with text-to-speech, repeat/snooze functionsand notifications.
                   </p>
                   <p>
-                    When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing to open-source projects, 
-                    or sharing my knowledge through blog posts and mentoring. I believe in writing clean, maintainable 
-                    code and creating user experiences that delight and inspire.
+                    Outside of coding, I continuously explore new tools and frameworks, collaborate on client projects, and refine my skills to stay ahead in the ever-evolving tech landscape. I’m committed to delivering quality solutions and user experiences that make a lasting impact. I’ve also developed a Gym Management System with features like role-based access, server-side pagination, attendance tracking, and payment integration — all built with Django, MySQL, and AJAX for seamless interactivity.
                   </p>
                 </div>
-                <Button className="group">
-                  <Download className="mr-2 w-4 h-4 transition-transform group-hover:translate-y-1" />
-                  Download Resume
-                </Button>
+                <div className='mt-3'>
+                  <a href="/resume.pdf" download>
+                    <Button className="group">
+                      <Download className="mr-2 w-4 h-4 transition-transform group-hover:translate-y-1" />
+                      Download Resume
+                    </Button>
+                  </a>
+                </div>
               </div>
 
               {/* Skills */}
